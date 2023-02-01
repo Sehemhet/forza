@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    {% for el in auto %}
+
+      <div class="box_brand">
+        <div class="in_box_brand" enctype="multipart/form-data">
+          <a href="{{ el.get_absolute_url }}"></a>
+          <img src="{{ el.logo.url }}" alt="">
+        </div>
+        <div class="text_box_brand">
+          <p>{{ el.brand }}</p>
+        </div>
+      </div>
+
+    {% endfor %}
+
+{% endblock %}
+
+{% block pages %}
+{% if page_obj.has_other_pages %}
+<div class="for_pag">
+        <nav class="">
+            <ul class="for_pag">
+                {% for p in paginator.page_range %}
+                    {% if page_obj.number == p %}
+                        <li class="display_inline">{{ p }}</li>
+                    {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+                        <li class="display_inline">
+                            <a href="?page={{ p }}">{{ p }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+{% endif %}
+{% endblock pages %}

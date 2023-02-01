@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load news_tags %}
+{% block title %}{{ article }}{% endblock %}
+
+{% block content %}
+
+    <div class="categories">
+        {% get_categories as cats %}
+
+            {% for el in cats %}
+              <a href="{{ el.get_absolute_url }}"><h3>{{ el.name }}</h3></a>
+            {% endfor %}
+
+            {% for el in menu %}
+                <a href="{{ el.url_name }}"><h3>{{ el.name }}</h3></a>
+            {% endfor %}
+    </div>
+
+    {% for el in object_list %}
+
+      <a href="{{ el.get_absolute_url }}">
+        <div class="box_news">
+
+            <div class="img_news">
+              <img src="{{ el.photo.url }}" alt="">
+            </div>
+
+            <div class="text_news">
+              <h3>{{ el.article }}</h3>
+              <p>{{ el.content|truncatewords:15 }}</p>
+              <span>Категория: {{ el.cat }}</span><br>
+              <span>Публикация: {{ el.time_create }}</span>
+            </div>
+
+        </div>
+      </a>
+
+<br><br>
+    {% endfor %}
+
+{% if page_obj.has_other_pages %}
+<div class="for_pag">
+        <nav class="">
+            <ul class="for_pag">
+                {% for p in paginator.page_range %}
+                    {% if page_obj.number == p %}
+                        <li class="display_inline">{{ p }}</li>
+                    {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+                        <li class="display_inline">
+                            <a href="?page={{ p }}">{{ p }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
+{% endif %}
+
+
+{% endblock %}
+
+
+
+

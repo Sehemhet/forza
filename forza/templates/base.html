@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title%}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    {% include 'include/header.html' %}
+  <div class="page">
+    <div class="in_page">
+      {% block content %}
+      {% endblock content %}
+    </div>
+    <div class="in_pagination">
+      {% block pages %}
+      {% endblock pages %}
+      </div>
+  </div>
+    {% include 'include/footer.html' %}
+  </body>
+</html>

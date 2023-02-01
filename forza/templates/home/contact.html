@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+          <h1>{{ title }}</h1>
+
+        <div class="register">
+              <form action="{% url 'contact' %}"  method="post">
+                    {% csrf_token %}
+                      <div>{{ form.non_field_errors }}</div>
+
+                    {% for f in form %}
+                      <p class="register_box"><label for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }}</p>
+                      <div>{{ f.errors }}</div>
+                    {% endfor %}
+                  <button class="register_box" type="submit">Добавить</button>
+              </form>
+        </div>
+
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+        <form class="quest" action="test_result.html" method="post">
+
+          <h1>Какому автомобилю 100-литрового топливного бака хватает на 9 минут?</h1>
+
+
+        <div class="choise">
+
+          <div class="box_brand">
+            <div class="in_box_brand">
+              <img src="./img/logo/Aston_Martin.png" alt="">
+            </div>
+            <div class="text_box_brand">
+              <p>Aston Martin</p>
+              <input type="radio" name="text" value="">
+            </div>
+          </div>
+
+          <div class="box_brand">
+            <div class="in_box_brand">
+              <img src="./img/logo/bentley.png" alt="">
+            </div>
+            <div class="text_box_brand">
+              <p>Bentley</p>
+              <input type="radio" name="text" value="">
+
+            </div>
+          </div>
+
+          <div class="box_brand">
+            <div class="in_box_brand">
+              <img src="./img/logo/bmw.png" alt="">
+            </div>
+            <div class="text_box_brand">
+              <p>BMW</p>
+              <input type="radio" name="text" value="">
+            </div>
+          </div>
+
+          <div class="box_brand">
+            <div class="in_box_brand">
+              <img src="./img/logo/bugatti.png" alt="">
+            </div>
+            <div class="text_box_brand">
+              <p>Bugatti</p>
+              <input type="radio" name="text" value="">
+            </div>
+          </div>
+
+        </div>
+
+        <h1>
+          <button onclick="document.location='test_result.html'" type="button" name="button">Принять ответ</button>
+        </h1>
+
+
+        </form>
+
+{% endblock %}

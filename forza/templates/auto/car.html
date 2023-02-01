@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>{{ car.brand }}</h1>
+
+
+      <div class="box_car">
+          <h1>{{ car.model }} - {{ car.year }}</h1>
+          <div class="options_car">
+            <p>Класс: {{ car.level }}</p>
+            <p>Привод: {{ car.type_drive }}</p>
+            <p>Цена: {{ car.price }}</p>
+          </div>
+          <img src="{{ car.photo.url }}" alt="">
+      </div>
+
+      <div class="box_table">
+
+        <div class="table">
+          <h3>Показатели</h3>
+          <table>
+            <tr>
+              <td>point1</td><td>point1</td>
+            </tr>
+            <tr>
+              <td>point2</td><td>point2</td>
+            </tr>
+            <tr>
+              <td>point3</td><td>point3</td>
+            </tr>
+            <tr>
+              <td>point4</td><td>point4</td>
+            </tr>
+            <tr>
+              <td>point5</td><td>point5</td>
+            </tr>
+          </table>
+        </div>
+
+          <div class="table">
+            <h3>Характеристики</h3>
+            <table>
+              <tr>
+                <td>point1</td><td>point1</td>
+              </tr>
+              <tr>
+                <td>point2</td><td>point2</td>
+              </tr>
+              <tr>
+                <td>point3</td><td>point3</td>
+              </tr>
+              <tr>
+                <td>point4</td><td>point4</td>
+              </tr>
+              <tr>
+                <td>point5</td><td>point5</td>
+              </tr>
+              <tr>
+                <td>point5</td><td>point5</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="table">
+            <h3>Скорость</h3>
+            <table>
+              <tr>
+                <td>point1</td><td>point1</td>
+              </tr>
+              <tr>
+                <td>point2</td><td>point2</td>
+              </tr>
+              <tr>
+                <td>point3</td><td>point3</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="table">
+            <h3>Тормозной путь</h3>
+            <table>
+              <tr>
+                <td>point1</td><td>point1</td>
+              </tr>
+              <tr>
+                <td>point2</td><td>point2</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="table">
+            <h3>Боковые перегрузки</h3>
+            <table>
+              <tr>
+                <td>point1</td><td>point1</td>
+              </tr>
+              <tr>
+                <td>point2</td><td>point2</td>
+              </tr>
+            </table>
+          </div>
+
+      </div>
+
+{% endblock %}

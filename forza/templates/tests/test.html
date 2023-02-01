@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+        <form class="" action="test_result.html" method="post">
+
+            <div class="test_box">
+              <p>Желаете ли вы пройти тест?</p>
+            </div>
+            <div class="test_box">
+              <input type="radio" name="text" value="">
+              <label for="">Да</label>
+            </div>
+            <div class="test_box">
+              <input type="radio" name="text" value="">
+              <label for="">Нет</label>
+            </div>
+            <div class="test_box">
+              <button onclick="document.location='question.html'" type="button" name="button">Принять ответ</button>
+            </div>
+
+        </form>
+
+{% endblock %}
+

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% for el in object_list %}
+
+      <div class="box_model">
+        <div class="in_box_model">
+          <a href="{{ el.get_absolute_url }}"></a>
+          <img src="{{ el.photo.url }}" alt="">
+        </div>
+        <div class="text_box_model">
+          <h3>{{ el.model }}</h3>
+          <p>{{ el.year }}</p>
+        </div>
+      </div>
+
+    {% endfor %}
+
+{% endblock %}
